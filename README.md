@@ -1,0 +1,4 @@
+luckypennyfund
+==============
+
+Lucky Penny Fund
