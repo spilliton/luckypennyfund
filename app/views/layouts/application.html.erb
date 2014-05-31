@@ -11,6 +11,15 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <% if user_signed_in? %>
+    <p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
+  <% elsif current_page?(controller: '/users', action: 'new') %>
+  <% else %>
+    <p class="login"><%= link_to('Login', new_user_session_path)  %></p>
+  <% end %>
+    
+
+
 <%= yield %>
 
 </body>
