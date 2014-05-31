@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :donors
   resources :recipients
 
   resources :donors
@@ -59,4 +60,6 @@ Rails.application.routes.draw do
   #   end
 
   get '/' => 'homepage#index', as: :homepage
+
+  root to: 'homepage#index'
 end
