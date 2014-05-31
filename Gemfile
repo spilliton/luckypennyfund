@@ -40,3 +40,14 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'simple_form'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19]
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_layout'
+end
