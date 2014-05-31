@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531184829) do
+ActiveRecord::Schema.define(version: 20140531192638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "donors", force: true do |t|
+  create_table "recipients", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "organization"
+    t.string   "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.boolean  "organization"
@@ -33,16 +42,7 @@ ActiveRecord::Schema.define(version: 20140531184829) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "donors", ["email"], name: "index_donors_on_email", unique: true, using: :btree
-  add_index "donors", ["reset_password_token"], name: "index_donors_on_reset_password_token", unique: true, using: :btree
-
-  create_table "recipients", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.boolean  "organization"
-    t.string   "recipient_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
