@@ -53,4 +53,3 @@ group :development do
 end
 
 gem 'country_select', '~> 1.3.1'
-gem 'birthday', '~> 0.3.1'

@@ -78,7 +78,7 @@ class UsersController < ApplicationController
         :city,
         :state,
         :zip,
-        :country :as => :select,
+        :country
         :gender,
         :dob
       )
