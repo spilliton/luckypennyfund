@@ -1,0 +1,14 @@
+log/*.log
+tmp/*
+ruby-prof/*
+passenger/*
+.DS_Store
+.bundle/*
+.sass-cache/*
+coverage
+db/development.sqlite3
+db/test.sqlite3
+redesign.dump
+.rvmrc
+public/assets/*
+rails_best_practices_output.html
