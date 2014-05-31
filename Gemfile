@@ -51,3 +51,6 @@ group :development do
   gem 'rails_apps_pages'
   gem 'rails_layout'
 end
+
+gem 'country_select', '~> 1.3.1'
+gem 'birthday', '~> 0.3.1'

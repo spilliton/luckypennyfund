@@ -7,6 +7,16 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
+
+    <%= f.input :address1, required: true %>
+    <%= f.input :address2, required: false %>
+    <%= f.input :locality, required: true %>
+    <%= f.input :state, required: true %>
+    <%= f.input :zip, required: true %>
+    <%= f.input :country, required: true %>
+
+    <%= f.input :gender, required: true %>
+    <%= f.input :dob, required: true %>
   </div>
 
   <div class="form-actions">
