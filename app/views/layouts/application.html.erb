@@ -14,7 +14,7 @@
   <% if current_user %>
     <p class="username"><%= link_to(current_user.email, edit_user_registration_path) %></p>
     <p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
-  <% #elsif current_page?(controller: '/users', action: 'sign_in') %>
+  <% elsif current_page?('/users/sign_in') %>
   <% else %>
     <p class="login"><%= link_to('Login', new_user_session_path)  %></p>
   <% end %>
