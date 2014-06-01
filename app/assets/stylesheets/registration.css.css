@@ -119,16 +119,26 @@ select {
 
 .contribution-select {
   width: 100%;
+  text-align: center;
 }
 
-.contribution-select .description {
+.radio-inline input[type="radio"] {
+  float: none;
+  margin: 5px 0 0;
+}
 
+
+.contribution-select .description {
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .cost-description {
   color: #898888;
   font-size: 16px;
   font-weight: 700;
+  text-align: right;
+  margin-top: 30px;
 }
 
 .sign-up.caption.text-center {
@@ -151,6 +161,7 @@ abbr[title="required"] {
   margin-right: auto;
 }
 
+
 .password.required.form-control, .string.optional.form-control, .string.required.form-control {
   width: 100%;
 }
@@ -162,8 +173,4 @@ abbr[title="required"] {
 .user_gender.form-group, .user_dob.form-group {
   margin-left: 0;
   margin-right: 0;
-}
-
-#matching-background {
-  color: #4cdea9;
 }
