@@ -1,17 +1,87 @@
-<h2>Sign up</h2>
+<div class="row sign-up">
+	<div class="col-md-7 center">
+		<p class="caption small text-right">Already have an account? <a class="cap text-blue" href="/users/sign_in">sign in</a></p>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+		<h4 class="text-blue sign-up caption text-center">thank you for choosing to adopt, let's get started. <br><span class="caption small">We need to create and account for you.</span></h4>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+		<div class="ruler"></div>
+		<div class="clearfix"></div>
+		<div id="sign-up-carousel" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#sign-up-carousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#sign-up-carousel" data-slide-to="1"></li>
+		    <li data-target="#sign-up-carousel" data-slide-to="2"></li>
+		  </ol>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      Content for 1
+		      <div class="carousel-caption">
+		      1
+		      </div>
+		    </div>
+
+		    <div class="item">
+		      Content for 2
+		      <div class="carousel-caption">
+		      2
+		      </div>
+		    </div>
+
+		    <div class="item">
+		    	Content for 3
+		      <div class="carousel-caption">
+		      3
+		      </div>
+		    </div>
+		    
+		  </div>
+		
+		<div class="controls">
+			<p class="pull-right">
+				Step <span class="current">x</span> of <span class="total">3</span>
+				<a class="left btn btn-info" href="#sign-up-carousel" data-slide="prev">
+		    Previous
+		  </a>
+		  <a class="right btn btn-primary" href="#sign-up-carousel" data-slide="next">
+		  	Next
+		  </a>
+
+			</p>
+			<!-- Controls -->
+		</div>
+		</div>
+	</div>
+
+
+	<h2>Sign up</h2>
+
+	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+	  <%= f.error_notification %>
+
+	  <div class="form-inputs">
+	    <%= f.input :email, required: true, autofocus: true %>
+	    <%= f.input :password, required: true %>
+	    <%= f.input :password_confirmation, required: true %>
+	  </div>
+
+	  <div class="form-actions">
+	    <%= f.button :submit, "Sign up" %>
+	  </div>
+	<% end %>
+
+	<%= render "devise/shared/links" %>
+</div>
+
+<% content_for :js do %>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.carousel').carousel({
+			wrap: false
+		});
+	});
+</script>
+
 <% end %>
-
-<%= render "devise/shared/links" %>
