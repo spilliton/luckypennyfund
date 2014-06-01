@@ -1,10 +1,14 @@
 class RecipientsController < ApplicationController
+  before_action :require_admin, only: [:edit, :index, :create, :update, :destroy, :new]
   before_action :set_recipient, only: [:show, :edit, :update, :destroy]
+  before_action :require_ownership, only: [:edit, :update, :destroy]
 
   # GET /recipients
   # GET /recipients.json
   def index
-    @user = User.find(params[:user_id])
+    user_id = params[:user_id]
+    user_id = current_user.id if current_user
+    @user = User.find(user_id)
     @recipients = @user.recipients
   end
 
@@ -15,7 +19,8 @@ class RecipientsController < ApplicationController
 
   # GET /users/:user_id/recipients/new
   def new
-    @user = User.find(params[:user_id])
+    user_id = current_user.id if current_user
+    @user = User.find(user_id)
     @recipient = @user.recipients.build
   end
 
@@ -67,14 +72,26 @@ class RecipientsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipient
-      @user = User.find(params[:user_id])
-      @recipient = @user.recipients.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def recipient_params
-      params.require(:recipient).permit(:first_name, :last_name, :email, :organization, :recipient_id)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipient
+    user_id = params[:user_id]
+    user_id = current_user.id if current_user
+    @user = User.find(user_id)
+    @recipient = @user.recipients.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to "/"
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def recipient_params
+    params.require(:recipient).permit(:first_name, :last_name, :email, :organization, :recipient_id, :description)
+  end
+
+  def require_ownership
+    if @recipient.creator != current_user
+      redirect_to "/"
     end
+  end
+
 end

@@ -4,6 +4,7 @@ donor:
   first_name: Some
   last_name: Bro
   email: somebro@gmail.com
+  admin: false
 
 caseworker:
   first_name: Case

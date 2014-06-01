@@ -2,12 +2,43 @@ require 'test_helper'
 
 class RecipientsControllerTest < ActionController::TestCase
   
-  context "a recipient" do 
+  context "logged in donor and recipient" do 
+    setup do 
+      @donor = users(:donor)
+      sign_in :user, @donor
+
+      @recipient = recipients(:one)
+    end
+
+    should "redirect all routes" do 
+      get :index
+      assert_redirected_to "/"
+
+      get :show, id: @recipient
+      assert_redirected_to "/"
+
+      get :new
+      assert_redirected_to "/"
+
+      post :create
+      assert_redirected_to "/"
+
+      put :update, id: @recipient
+      assert_redirected_to "/"
+
+      delete :destroy, id: @recipient
+      assert_redirected_to "/"      
+    end
+
+  end
+
+  context "a recipient owned by a logged-in caseworker" do 
     setup do
       @recipient = recipients(:one)
       @caseworker = users(:caseworker)
-      @recipient.creator_id = @caseworker.id
       @recipient.save
+
+      sign_in :user, @caseworker
     end
 
     should "get index" do
