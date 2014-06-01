@@ -4,7 +4,8 @@ class RecipientsController < ApplicationController
   # GET /recipients
   # GET /recipients.json
   def index
-    @recipients = Recipient.all
+    @user = User.find(params[:user_id])
+    @recipients = @user.recipients
   end
 
   # GET /recipients/1
@@ -12,41 +13,45 @@ class RecipientsController < ApplicationController
   def show
   end
 
-  # GET /recipients/new
+  # GET /users/:user_id/recipients/new
   def new
-    @recipient = Recipient.new
+    @user = User.find(params[:user_id])
+    @recipient = @user.recipients.build
   end
 
-  # GET /recipients/1/edit
+  # GET /users/:user_id/recipients/1/edit
   def edit
   end
 
-  # POST /recipients
-  # POST /recipients.json
+  # POST /users/:user_id/recipients
+  # POST /users/:user_id/recipients.json
   def create
-    @recipient = Recipient.new(recipient_params)
+    @user = User.find(params[:user_id])
+    @recipient = @user.recipients.build(recipient_params)
 
     respond_to do |format|
       if @recipient.save
-        format.html { redirect_to @recipient, notice: 'Recipient was successfully created.' }
-        format.json { render :show, status: :created, location: @recipient }
+        format.html { redirect_to [@user, @recipient], notice: 'Recipient was successfully created.' }
+        format.json { render :show, status: :created, location: [@user, @recipient] }
       else
         format.html { render :new }
-        format.json { render json: @recipient.errors, status: :unprocessable_entity }
+        format.json { render json: [@user, @recipient.errors], status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /recipients/1
-  # PATCH/PUT /recipients/1.json
+  # PATCH/PUT /users/:user_id/recipients/1
+  # PATCH/PUT /users/:user_id/recipients/1.json
   def update
+    # TODO: Check recipient.creator_id is authorized current_user.id
+
     respond_to do |format|
       if @recipient.update(recipient_params)
-        format.html { redirect_to @recipient, notice: 'Recipient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipient }
+        format.html { redirect_to [@user, @recipient], notice: 'Recipient was successfully updated.' }
+        format.json { render :show, status: :ok, location: [@user, @recipient] }
       else
         format.html { render :edit }
-        format.json { render json: @recipient.errors, status: :unprocessable_entity }
+        format.json { render json: [@user, @recipient.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +61,7 @@ class RecipientsController < ApplicationController
   def destroy
     @recipient.destroy
     respond_to do |format|
-      format.html { redirect_to recipients_url, notice: 'Recipient was successfully destroyed.' }
+      format.html { redirect_to user_recipients_url, notice: 'Recipient was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +69,8 @@ class RecipientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipient
-      @recipient = Recipient.find(params[:id])
+      @user = User.find(params[:user_id])
+      @recipient = @user.recipients.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

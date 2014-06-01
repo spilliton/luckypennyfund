@@ -1,40 +1,33 @@
 <nav class="navbar navbar-default header-wrapper" role="navigation">
-    <div class="header">
-        <div class="row">
-            <div class="col-md-5">
-                <a class="logo" href="/"><%= image_tag 'logo.png' %></a>
-            </div>
-            <div class="col-md-5">
-            <ul class="navbar-header">
-                <li>
-                    <a href="/">What we do</a>
-                </li>
-                <li>
-                    <a href="/">The issues</a>
-                </li>
-                <li>
-                    <a href="/">Lucky pennies</a>
-                </li>
-                <li class="last">
-                    <a href="/">Blog</a>
-                </li>
-            </ul>
-            </div>
-            <div class="col-md-2">
-                <a href="/" class="adopt-now btn-danger btn btn-sm">Adopt now</a>
-            </div>
-        </div>
-       
-<!--
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-<p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
-<% #elsif current_page?(controller: '/users', action: 'sign_in') %>
-<% else %>
-<p class="login"><%= link_to('Login', new_user_session_path)  %></p>
-<% end %>
-</div>-->
-    </div>
+  <div class="header">
+    <div class="row">
+      <div class="col-md-5">
+        <a class="logo" href="/"><%= image_tag 'logo.png' %></a>
+      </div>
+      <div class="col-md-5">
+      <ul class="navbar-header">
+        <li>
+          <a href="http://luckypenny.strikingly.com/#what-we-do">What we do</a>
+        </li>
+        <li>
+          <a href="http://luckypenny.strikingly.com/#the-issue">The issue</a>
+        </li>
+        <li>
+          <a href="http://luckypenny.strikingly.com/#lucky-pennies-1">Lucky pennies</a>
+        </li>
+        <li class="last">
+          <a href="http://luckypennyfund.com/">Blog</a>
+        </li>
+      </ul>
+      </div>
+      <div class="col-md-2">
+        <% if !user_signed_in? %>           
+          <a href="/users/sign_up" class="btn btn-sm">Adopt now</a>
+        <% end %>
+        <% if user_signed_in? %>
+          <a data-method="delete" href="/users/sign_out" rel="nofollow" class="btn btn-sm">Logout</a>
+        <% end %>
+      </div>
+    </div>   
+  </div>
 </nav>

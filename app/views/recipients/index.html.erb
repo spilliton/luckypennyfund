@@ -16,9 +16,9 @@
         <td><%= recipient.first_name %></td>
         <td><%= recipient.last_name %></td>
         <td><%= recipient.email %></td>
-        <td><%= link_to 'Show', recipient %></td>
-        <td><%= link_to 'Edit', edit_recipient_path(recipient) %></td>
-        <td><%= link_to 'Destroy', recipient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [@user, recipient] %></td>
+        <td><%= link_to 'Edit', edit_user_recipient_path(@user, recipient) %></td>
+        <td><%= link_to 'Destroy', [@user, recipient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Recipient', new_recipient_path %>
+<%= link_to 'New Recipient', new_user_recipient_path %>

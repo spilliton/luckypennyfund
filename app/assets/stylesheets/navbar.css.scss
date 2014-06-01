@@ -6,9 +6,55 @@ $font-white: #fff;
   height: 104px;
   border-bottom: 1px solid $nav-divider-color;
   margin-bottom: 60px;
-  -moz-box-shadow:    0px 1px 1px 1px #ccc;
-  -webkit-box-shadow: 0px 1px 1px 1px #ccc;
-  box-shadow:         0px 1px 1px 1px #ccc;
+  -moz-box-shadow:    0px 1px 2px 0px rgba(22, 22, 22, 0.17);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(22, 22, 22, 0.17);
+  box-shadow:         0px 1px 2px 0px rgba(22, 22, 22, 0.17);
+}
+
+.navbar-header {
+  background-color: $nav-background-color;
+  border-bottom-color: $nav-divider-color;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  text-transform: lowercase;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    border-left: 1px solid $nav-divider-color;
+    min-width: 120px;
+    text-align: center;
+    list-style: none;
+    float: left;
+    border-left: 1px solid $nav-divider-color;
+
+    &.last {
+      border-right: 1px solid $nav-divider-color;
+    }
+
+    &:hover {
+      background-color: #f1f1f1;
+
+
+      a {
+        color: #403f3f;
+      }
+    }
+
+    a {
+      color: #898888;
+      font-size: 16px;
+      padding: 50px 20px 35px;
+      height: 100%;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
 }
 
 .logo {
@@ -19,63 +65,24 @@ $font-white: #fff;
   padding: 30px 0 0 75px;
 }
 
-
-.navbar-header{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.navbar-header li{
-  min-width: 120px;
-  text-align: center;
-  list-style: none;
-  float: left;
-  border-left: 1px solid $nav-divider-color;
-
-  a {
-    padding: 50px 20px 35px;
-    height: 100%;
-    display: block;
-  }
-  
-}
-
-.navbar-header li.last{
-  border-right: 1px solid $nav-divider-color;
-}
-
-.header .adopt-now{
+.header .btn{
   color: $font-white;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f05d55;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
   margin-top: 36px;
-}
+  padding: 8px 23px;
 
-.navbar {
-  ul {
-    font-family: 'PT Sans', sans-serif;
-    font-weight: 400;
-    text-transform: lowercase;
+  &:hover {
+    background-color: #c73b33;
   }
 }
 
-.navbar-header {
-  background-color: $nav-background-color;
 
-  a {
-    color: #898888;
-    font-size: 15px;
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
 
-.navbar-header {
-  border-bottom-color: $nav-divider-color;
-  li {
-    border-left: 1px solid $nav-divider-color;
-    &.last {
-      border-right: 1px solid $nav-divider-color;
-    }
-  }
-}
+
 
