@@ -30,6 +30,7 @@ $font-white: #fff;
     list-style: none;
     float: left;
     border-left: 1px solid $nav-divider-color;
+    text-decoration: none;
 
     &.last {
       border-right: 1px solid $nav-divider-color;
@@ -51,6 +52,7 @@ $font-white: #fff;
       padding: 50px 20px 35px;
       height: 100%;
       display: block;
+      
       &:hover {
         text-decoration: none;
       }
