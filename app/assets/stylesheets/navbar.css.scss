@@ -32,6 +32,14 @@ $font-white: #fff;
   float: left;
   border-left: 1px solid $nav-divider-color;
 
+  &:hover {
+    background-color: red;
+
+    a {
+      color: black;
+    }
+  }
+
   a {
     padding: 50px 20px 35px;
     height: 100%;
