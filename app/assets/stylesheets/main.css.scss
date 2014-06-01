@@ -45,14 +45,24 @@ $text-blue : #4f9fcf !important;
 	cursor: pointer;;
 }
 
-.sign-up.caption{
-	margin: 35px 0px 60px 0px;
+.already-have-account{
+	margin: 0 0px 60px;
+	color: #989ea0;
+
+	a{
+		font-weight: 700;
+		color: #0e9ecd;
+		font-size: 13px;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		margin-left: 10px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+  }
 }
 
-.sign-up.caption .caption{
-	margin-top: 20px;
-	display: block;
-}
 
 .sign-up .ruler{
 	height: 1px;

@@ -22,10 +22,10 @@
       </div>
       <div class="col-md-2">
         <% if !user_signed_in? %>           
-          <a href="/users/sign_up" class="adopt-now btn-danger btn btn-sm">Adopt now</a>
+          <a href="/users/sign_up" class="btn btn-sm">Adopt now</a>
         <% end %>
         <% if user_signed_in? %>
-          <a data-method="delete" href="/users/sign_out" rel="nofollow" class="adopt-now btn-danger btn btn-sm">Logout</a>
+          <a data-method="delete" href="/users/sign_out" rel="nofollow" class="btn btn-sm">Logout</a>
         <% end %>
       </div>
     </div>   
