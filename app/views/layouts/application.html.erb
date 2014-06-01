@@ -2,26 +2,30 @@
 <html>
 <head>
   <title>Luckypennyfund</title>
+
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<%= render partial: 'layouts/navbar' %>
 
-  <% if current_user %>
-    <p class="username"><%= link_to(current_user.email, edit_user_registration_path) %></p>
-    <p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
-  <% elsif current_page?('/users/sign_in') %>
-  <% else %>
-    <p class="login"><%= link_to('Login', new_user_session_path)  %></p>
-  <% end %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<div class="footer-wrapper">
+  <footer>
     
-
-
-<%= yield %>
+  </footer>
+</div>
 
 </body>
+
+<%= yield :js%>
+
 </html>

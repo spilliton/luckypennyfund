@@ -52,4 +52,8 @@ group :development do
   gem 'rails_layout'
 end
 
+group :test do 
+  gem 'shoulda'
+end
+
 gem 'country_select', '~> 1.3.1'

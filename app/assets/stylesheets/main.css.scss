@@ -1,0 +1,88 @@
+/* 
+
+Fonts: Vollkorn && PT sans
+
+font-family: 'Vollkorn', serif;
+font-family: 'PT Sans', sans-serif;
+
+*/
+
+html p{
+	font-family: 'PT Sans', sans-serif;
+}
+
+.pt-sans{
+	font-family: 'PT Sans', sans-serif;
+}
+
+.vollkorn{
+	font-family: 'Vollkorn', serif;
+}
+
+$text-blue : #4f9fcf !important;
+
+.text-blue{
+	color: $text-blue;
+}
+.no-margin{
+	margin: 0px;
+}
+
+.center{
+	margin: 0 auto;
+	display: block;
+	float: none;
+}
+.cap{
+	text-transform: capitalize;
+}
+
+.no-display{
+	display: none;
+}
+
+.pointer{
+	cursor: pointer;;
+}
+
+.sign-up.caption{
+	margin: 35px 0px 60px 0px;
+}
+
+.sign-up.caption .caption{
+	margin-top: 20px;
+	display: block;
+}
+
+.sign-up .ruler{
+	height: 1px;
+	width: 100%;
+}
+
+.swMain{
+	width: 100%;
+	margin-top: 30px;
+}
+
+.swMain .anchor{
+	display: none !important;
+}
+
+.swMain .stepContainer .content, .swMain .actionBar{
+	background: none !important;
+	border: none !important;
+}
+
+#sign-up-carousel .item{
+	padding-top: 50px;
+	min-height: 450px;
+}
+
+#sign-up-carousel p{
+
+}
+
+#sign-up-carousel a.left{
+	margin-left: 20px;
+}
+
