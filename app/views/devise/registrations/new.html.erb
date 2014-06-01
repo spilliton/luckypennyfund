@@ -5,7 +5,7 @@
   });
 <% end %>
 
-<div class="col-md-7 center">
+<div class="col-md-7 center" id="title-text">
 	<p class="text-right already-have-account vollkorn">
     Already have an account? 
     <a class="pt-sans" href="/users/sign_in">sign in</a>
@@ -26,11 +26,11 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
         <div class="col-sm-4">
-          <%= f.input :first_name, required: true %>
+          <%= f.input :first_name, label: "First Name", required: true %>
         </div>
         <div class="col-sm-2"></div>
         <div class="col-sm-4 ">
-          <%= f.input :last_name, required: true %>
+          <%= f.input :last_name, label: "Last Name", required: true %>
         </div>
         <div class="col-sm-1"></div>
       </div>
@@ -48,14 +48,15 @@
         </div>
         <div class="col-sm-2"></div>
         <div class="col-sm-4">
-          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :password_confirmation, label: "Confirm Password", required: true %>
         </div>
         <div class="col-sm-1"></div>
       </div>
 
       <div class="form-group">
-        <div class="col-sm-7"></div>
+        <div class="col-sm-5"></div>
         <div class="col-sm-2 step nopadding">STEP 1 OF 3</div>
+        <div class="col-sm-2"></div>
         <div class="col-sm-2 nopadding">
           <div class="next-button btn btn-default" onclick="$('.login-info').hide(); $('.user-info').show();">Next</div>
         </div>
@@ -66,14 +67,14 @@
     <div class="user-info" style="display: none">
       <div class="form-group">
         <div class="col-sm-1"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 nopadding">
           <%=f.label "Gender" %>
           <div class="form-inline">
             <%= f.input :gender, label: "", as: :radio_buttons, required: true, collection: ['Male', 'Female'] %>
           </div>
         </div>
         <div class="col-sm-2"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 nopadding">
           <%= f.label "Date of Birth" %>
           <div class="form-inline">
             <%= f.input :dob, label: "", as: :date, required: true, start_year: 1900, order: [:day, :month, :year] %>
@@ -85,14 +86,14 @@
       <div class="form-group">
         <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <%= f.input :address1, required: true %>
+            <%= f.input :address1, label: "Address 1", required: true %>
           </div>
         <div class="col-sm-1"></div>
       </div>
       <div class="form-group">
         <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <%= f.input :address2, required: false %>
+            <%= f.input :address2, label: "Address 2", required: false %>
           </div>
         <div class="col-sm-1"></div>        
       </div>
@@ -117,11 +118,14 @@
       </div>
 
       <div class="form-group">
-        <div class="col-sm-5"></div>
-        <div class="col-sm-2 step nopadding">STEP 2 OF 3</div>
+        <div class="col-sm-1"></div>
         <div class="col-sm-2 nopadding">
           <div class="back-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Back</div>
         </div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2 step nopadding">STEP 2 OF 3</div>
+        <div class="col-sm-2"></div>
+        
         <div class="col-sm-2 nopadding">
           <div class="next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
         </div>

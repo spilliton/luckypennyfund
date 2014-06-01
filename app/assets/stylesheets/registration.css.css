@@ -17,6 +17,9 @@ body, label, div {
 
 .step {
   text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #b0adad;
 }
 
 .next-button, .back-button, input.btn{
@@ -28,11 +31,15 @@ body, label, div {
   border-radius: 7px;
   border-width: 0;
   width: 80%;
-  float: right;
+}
+
+.back-button {
+  float: left;
 }
 
 .next-button, input.btn {
   background-color: #4cdea9;
+  float: right;
 }
 
 .next-button:hover, input.btn:hover {
@@ -57,11 +64,26 @@ body, label, div {
 
 .form-control, select {
   border-width: 1px;
-  border-color: #cfcfcf;  
+  border-color: #cfcfcf;
+  width: 100%;
 }
 
 .form-control:hover {
   border-color: #9b9999;
+}
+
+
+form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=number]:focus, form input[type=url]:focus, form input[type=tel]:focus, form textarea:focus {
+  border-color: #4b4b4b;
+  box-shadow: none;
+}
+.form-control:active {
+  border-color: #4b4b4b;
+  box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 input[type="radio"].radio_buttons.required {
@@ -106,4 +128,17 @@ abbr[title="required"] {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.password.required.form-control, .string.optional.form-control, .string.required.form-control {
+  width: 100%;
+}
+
+#title-text {
+  margin-bottom: 50px;
+}
+
+.user_gender.form-group, .user_dob.form-group {
+  margin-left: 0;
+  margin-right: 0;
 }

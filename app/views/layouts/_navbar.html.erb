@@ -22,7 +22,7 @@
       </div>
       <div class="col-md-2">
         <% if !user_signed_in? %>           
-          <a href="/users/sign_up" class="btn btn-sm">Adopt now</a>
+          <a href="/users/sign_up" id='adopt-now-btn' class="btn btn-sm">Adopt now</a>
         <% end %>
         <% if user_signed_in? %>
           <a data-method="delete" href="/users/sign_out" rel="nofollow" class="btn btn-sm">Logout</a>
