@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 20140531220256) do
     t.string   "zip"
     t.string   "country"
     t.string   "gender"
+    t.date     "dob"
     t.boolean  "admin",                  default: false
     t.boolean  "superuser",              default: false
-    t.date     "dob"
   end
 
   add_index "users", ["admin"], name: "index_users_on_admin", using: :btree

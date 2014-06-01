@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :recipients
+  has_many :recipients, class_name: "Recipient", foreign_key: "creator_id"
 
 end
