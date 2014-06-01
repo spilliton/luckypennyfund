@@ -55,48 +55,43 @@
 		</div>
 	</div>
 
-
-	<h2>Sign up</h2>
 	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	  <%= f.error_notification %>
-  <div class="form-inputs">
+    <div class="form-inputs">
 
-    <div class="login-info">
-      <%= f.input :email, required: true, autofocus: true %>
-      <%= f.input :password, required: true %>
-      <%= f.input :password_confirmation, required: true %>
+      <div class="login-info">
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :password, required: true %>
+        <%= f.input :password_confirmation, required: true %>
+        
+        <div class="next-button btn btn-default" onclick="$('.login-info').hide(); $('.user-info').show();">Next</div>   
+      </div>     
 
-      <div class="next-button btn btn-default" onclick="$('.login-info').hide(); $('.user-info').show();">Next</div>   
-    </div>
+      <div class="user-info" style="display: none">
+        <%= f.input :address1, required: true %>
+        <%= f.input :address2, required: false %>
+        <%= f.input :locality, required: true %>
+        <%= f.input :state, required: true %>
+        <%= f.input :zip, required: true %>
+        <%= f.input :country, required: true %>
 
-   
+        <%= f.input :gender, required: true, collection: ['Male', 'Female'] %>
+        <%= f.input :dob, required: true, start_year: 1900 %>
 
-    <div class="user-info" style="display: none">
-      <%= f.input :address1, required: true %>
-      <%= f.input :address2, required: false %>
-      <%= f.input :locality, required: true %>
-      <%= f.input :state, required: true %>
-      <%= f.input :zip, required: true %>
-      <%= f.input :country, required: true %>
-
-      <%= f.input :gender, required: true, collection: ['Male', 'Female'] %>
-      <%= f.input :dob, required: true, start_year: 1900 %>
-
-      <div class="next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
-    </div>
-
-
-
-    <div class="payment-info" style="display: none">
-      Payment Info
-
-      <div class="form-actions btn btn-default">
-        <%= f.button :submit, "Sign up" %>
+        <div class="prev-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Prev</div>      
+        <div class="next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
       </div>
 
-    </div>
-  </div>
+      <div class="payment-info" style="display: none">
+        Payment Info
 
+        <div class="prev-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Prev</div>      
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+
+      </div>
+    </div>
 
 	<% end %>
 
