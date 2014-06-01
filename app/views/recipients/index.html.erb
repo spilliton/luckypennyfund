@@ -1,12 +1,12 @@
-<h1>Listing recipients</h1>
+<h1>Recipients</h1>
 
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
+      <th>Family Size</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -15,7 +15,7 @@
       <tr>
         <td><%= recipient.first_name %></td>
         <td><%= recipient.last_name %></td>
-        <td><%= recipient.email %></td>
+        <td><%= recipient.family_members.count %></td>
         <td><%= link_to 'Show', [@user, recipient] %></td>
         <td><%= link_to 'Edit', edit_user_recipient_path(@user, recipient) %></td>
         <td><%= link_to 'Destroy', [@user, recipient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Recipient', new_user_recipient_path %>
+<%= link_to 'New Recipient', new_recipient_path %>

@@ -20,4 +20,6 @@ ActiveAdmin.register Recipient do
   end
   permit_params :first_name, :last_name, :email, :creator_id
 
+  remove_filter :recipients_family_members
+
 end

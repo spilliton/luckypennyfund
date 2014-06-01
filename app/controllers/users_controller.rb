@@ -86,6 +86,7 @@ class UsersController < ApplicationController
         :country,
         :gender,
         :dob,
+        :contribution,
         :password,
         :password_confirmation
       )

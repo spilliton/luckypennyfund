@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140601185142) do
     t.datetime "updated_at"
     t.integer  "creator_id"
     t.string   "last_name"
+    t.text     "description"
   end
 
   create_table "recipients_users", id: false, force: true do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20140601185142) do
     t.boolean  "admin",                  default: false
     t.boolean  "superuser",              default: false
     t.string   "last_name"
+    t.string   "contribution"
   end
 
   add_index "users", ["admin"], name: "index_users_on_admin", using: :btree

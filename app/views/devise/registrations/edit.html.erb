@@ -21,6 +21,7 @@
 
     <%= f.input :gender, required: true, collection: ['Male', 'Female'] %>
     <%= f.input :dob, required: true, start_year: 1900 %>
+    <%= f.input :contribution, collection: ['Basic', 'Intermediate', 'Advanced'] %>
 
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
