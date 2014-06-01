@@ -2,26 +2,67 @@
 <html>
 <head>
   <title>Luckypennyfund</title>
+
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<nav class="navbar navbar-default header-wrapper" role="navigation">
+    <div class="container header">
+        <div class="row">
+            <div class="col-md-3">
+                <a class="logo" href="/"><%= image_tag('logo.png') %></a>
+            </div>
+            <ul class="navbar-header col-md-6 col-md-offset-1">
+                <li>
+                    <a href="/">What we do</a>
+                </li>
+                <li>
+                    <a href="/">The issues</a>
+                </li>
+                <li>
+                    <a href="/">Lucky pennies</a>
+                </li>
+                <li class="last">
+                    <a href="/">Blog</a>
+                </li>
+            </ul>
+            <div class="col-md-2">
+                <a href="/" class="adopt-now btn-danger btn btn-sm">Adopt now</a>
+            </div>
+        </div>
+       
+<!--
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-  <% if current_user %>
-    <p class="username"><%= link_to(current_user.email, edit_user_registration_path) %></p>
-    <p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
-  <% #elsif current_page?(controller: '/users', action: 'sign_in') %>
-  <% else %>
-    <p class="login"><%= link_to('Login', new_user_session_path)  %></p>
-  <% end %>
+<% if user_signed_in? %>
+<p class="logout"><%= link_to('Logout', destroy_user_session_path, :method => :delete)  %></p>
+<% #elsif current_page?(controller: '/users', action: 'sign_in') %>
+<% else %>
+<p class="login"><%= link_to('Login', new_user_session_path)  %></p>
+<% end %>
+</div>-->
+    </div>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<div class="footer-wrapper">
+  <footer>
     
-
-
-<%= yield %>
+  </footer>
+</div>
 
 </body>
+
+<%= yield :js%>
+
 </html>
