@@ -88,13 +88,8 @@ select {
   font-weight: 700;
 }
 
-.sign-up {
+.sign-up.caption.text-center {
   font-family: "Vollkorn";
   font-weight: 400;
   font-size: 26px;
-}
-
-.caption.small {
-  font-family: "PT Sans";
-  font-weight: 400;
 }
