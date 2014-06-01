@@ -4,8 +4,10 @@ one:
   first_name: MyString
   last_name: MyString1
   email: MyString2
+  creator: caseworker
 
 two:
   first_name: MyString
   last_name: Mystring3
   email: MyString4
+  creator: caseworker
