@@ -15,9 +15,3 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
-
-$('input[name="optionsRadios"]').on('change', function() {
-  $("#cost-number").text($(this).val());
-  console.log('change', $(this).val());
-});
