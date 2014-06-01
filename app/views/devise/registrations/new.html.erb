@@ -59,11 +59,17 @@
         <div class="form-group">
           <div class="col-sm-1"></div>
           <div class="col-sm-4">
-            <%= f.input :gender, required: true, collection: ['Male', 'Female'] %>
+            <%=f.label "Gender" %>
+            <div class="form-inline">
+              <%= f.input :gender, label: "", as: :radio_buttons, required: true, collection: ['Male', 'Female'] %>
+            </div>
           </div>
           <div class="col-sm-2"></div>
           <div class="col-sm-4">
-            <%= f.input :dob, required: true, start_year: 1900 %>
+            <%= f.label "Date of Birth" %>
+            <div class="form-inline">
+              <%= f.input :dob, label: "", as: :date, required: true, start_year: 1900, order: [:day, :month, :year] %>
+            </div>
           </div>
           <div class="col-sm-1"></div>
 
@@ -88,7 +94,7 @@
             <%= f.input :locality, required: true, label: 'City' %>
           </div>
           <div class="col-sm-1"></div>
-          <div class="col-sm-2">
+          <div class="col-sm-1">
             <%= f.input :state, required: true %>
           </div>
           <div class="col-sm-1"></div>
@@ -96,14 +102,16 @@
             <%= f.input :zip, required: true %>
           </div>
           <div class="col-sm-1"></div>
+          <div class="col-sm-2">
+            <%= f.input :country, required: true %>
+          </div>
+          <div class="col-sm-1"></div>
         </div>
-
-        <%= f.input :country, required: true %>
 
         <div class="form-group">
           <div class="col-sm-5"></div>
           <div class="col-sm-2">STEP 1 OF 3</div>
-          <div class="col-sm-2 prev-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Prev</div>
+          <div class="col-sm-2 back-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Back</div>
           <div class="col-sm-2 next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
           <div class="col-sm-1"></div>
         </div>
@@ -112,7 +120,7 @@
       <div class="payment-info" style="display: none">
         Payment Info
 
-        <div class="prev-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Prev</div>      
+        <div class="back-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Back</div>      
         <div class="form-actions">
           <%= f.button :submit, "Sign up" %>
         </div>
