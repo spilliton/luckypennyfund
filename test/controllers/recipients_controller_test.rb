@@ -20,7 +20,7 @@ class RecipientsControllerTest < ActionController::TestCase
 
     should "create recipient" do
       assert_difference('Recipient.count') do
-        post :create, recipient: { email: @recipient.email, name: @recipient.name }
+        post :create, recipient: { email: @recipient.email, first_name: @recipient.first_name, last_name: @recipient.last_name }
       end
 
       assert_redirected_to recipient_path(assigns(:recipient))
@@ -37,7 +37,7 @@ class RecipientsControllerTest < ActionController::TestCase
     end
 
     should "update recipient" do
-      patch :update, id: @recipient, recipient: { email: @recipient.email, name: @recipient.name }
+      patch :update, id: @recipient, recipient: { email: @recipient.email, first_name: @recipient.first_name, last_name: @recipient.last_name }
       assert_redirected_to recipient_path(assigns(:recipient))
     end
 
