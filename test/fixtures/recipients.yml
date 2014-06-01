@@ -2,12 +2,8 @@
 
 one:
   name: MyString
-  email: MyString
-  organization: false
-  recipient_id: MyString
+  email: MyString1
 
 two:
   name: MyString
-  email: MyString
-  organization: false
-  recipient_id: MyString
+  email: MyString2

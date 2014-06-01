@@ -10,15 +10,5 @@
   <%= @recipient.email %>
 </p>
 
-<p>
-  <strong>Organization:</strong>
-  <%= @recipient.organization %>
-</p>
-
-<p>
-  <strong>Recipient:</strong>
-  <%= @recipient.recipient_id %>
-</p>
-
 <%= link_to 'Edit', edit_recipient_path(@recipient) %> |
 <%= link_to 'Back', recipients_path %>

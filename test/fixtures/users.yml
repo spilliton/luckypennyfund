@@ -1,11 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  organization: false
+donor:
+  name: Some Bro
+  email: somebro@gmail.com
 
-two:
-  name: MyString
-  email: MyString
-  organization: false
+superuser:
+  name: Admin Person
+  email: admin@gmail.com
+  superuser: true
