@@ -15,7 +15,7 @@
       <tr>
         <td><%= recipient.first_name %></td>
         <td><%= recipient.last_name %></td>
-        <td><%= recipient.family_memebers.count %></td>
+        <td><%= recipient.family_members.count %></td>
         <td><%= link_to 'Show', [@user, recipient] %></td>
         <td><%= link_to 'Edit', edit_user_recipient_path(@user, recipient) %></td>
         <td><%= link_to 'Destroy', [@user, recipient], method: :delete, data: { confirm: 'Are you sure?' } %></td>

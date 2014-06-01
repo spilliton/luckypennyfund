@@ -8,5 +8,12 @@
   <%= @recipient.last_name %>
 </p>
 
-<%= link_to 'Edit', edit_user_recipient_path(@user, @recipient) %> |
-<%= link_to 'Back', user_recipients_path %>
+<p>
+  <strong>Description:</strong>
+  <%= @recipient.description %>
+</p>
+
+<% if current_user == @recipient.creator %>
+  <%= link_to 'Edit', edit_user_recipient_path(@user, @recipient) %> |
+  <%= link_to 'Back', user_recipients_path %>
+<% end %>

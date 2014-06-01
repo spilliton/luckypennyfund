@@ -30,6 +30,17 @@ class RecipientsControllerTest < ActionController::TestCase
       assert_redirected_to "/"      
     end
 
+    context "donor is in recipient family" do 
+      setup do 
+        @recipient.family_members << @donor
+      end
+
+      should "be able to view show page" do 
+        get :show, id: @recipient
+        assert_response 200
+      end
+    end
+
   end
 
   context "a recipient owned by a logged-in caseworker" do 
