@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601011639) do
+ActiveRecord::Schema.define(version: 20140601174334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +55,11 @@ ActiveRecord::Schema.define(version: 20140601011639) do
     t.string   "zip"
     t.string   "country"
     t.string   "gender"
+    t.date     "dob"
     t.boolean  "admin",                  default: false
     t.boolean  "superuser",              default: false
-    t.date     "dob"
     t.string   "last_name"
+    t.string   "contribution"
   end
 
   add_index "users", ["admin"], name: "index_users_on_admin", using: :btree

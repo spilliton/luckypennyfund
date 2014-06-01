@@ -64,7 +64,7 @@ body, label, div {
   border-color: #9b9999;
 }
 
-input.radio_buttons.required {
+input[type="radio"].radio_buttons.required {
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -72,4 +72,18 @@ input.radio_buttons.required {
 select {
   -webkit-appearance: none;
   height: 34px;
+}
+
+.contribution-select {
+  width: 100%;
+}
+
+.contribution-select .description {
+
+}
+
+.cost-description {
+  color: #898888;
+  font-size: 16px;
+  font-weight: 700;
 }

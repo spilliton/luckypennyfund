@@ -1,3 +1,10 @@
+<%= javascript_tag do %>
+  $('input[name="optionsRadios"]').on('change', function() {
+    $("#cost-number").text($(this).val());
+    console.log('change', $(this).val());
+  });
+<% end %>
+
 <div class="row sign-up">
 	<div class="col-md-7 center">
 		<p class="text-right already-have-account vollkorn">
@@ -127,7 +134,7 @@
         <div class="form-group">
           <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            Payment Info
+            <%= render "payment" %>
           </div>
           <div class="col-sm-1"></div>
         </div>

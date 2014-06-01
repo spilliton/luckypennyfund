@@ -1,0 +1,43 @@
+<%= javascript_tag do %>
+  $('input[name="optionsRadios"]').on('change', function() {
+    $("#cost-number").text($(this).val());
+    console.log('change', $(this).val());
+  });
+<% end %>
+
+<%= javascript_include_tag "payment" %>
+
+<h2> Select your Adopter Package </h2>
+
+<div class="form-group radio-inline">
+  <div class="col-sm-4">
+    <div class="contribution-select">
+      <%= image_tag "basic_shield.png" %>
+      <input name="optionsRadios" type="radio" id="inlineRadio1" value="10">
+      <div class="description">
+        A really basic level of contribution.
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="contribution-select">
+      <%= image_tag "intermediate_shield.png" %>
+      <input name="optionsRadios" type="radio" id="inlineRadio2" value="30">
+      <div class="description">
+        An intermediate level of contribution.
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="contribution-select">
+      <%= image_tag "advanced_shield.png" %>
+      <input name="optionsRadios" type="radio" id="inlineRadio3" value="100">
+      <div class="description">
+        An advanced level of contribution.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cost-description">
+  Monthly Recurring Charge: $<span id="cost-number">0</span>
+</div>
