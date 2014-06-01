@@ -1,10 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 donor:
-  name: Some Bro
+  first_name: Some
+  last_name: Bro
   email: somebro@gmail.com
 
 superuser:
-  name: Admin Person
+  first_name: Admin
+  last_name: Person
   email: admin@gmail.com
   superuser: true

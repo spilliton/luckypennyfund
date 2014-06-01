@@ -69,6 +69,6 @@ class RecipientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipient_params
-      params.require(:recipient).permit(:name, :email, :organization, :recipient_id)
+      params.require(:recipient).permit(:first_name, :last_name, :email, :organization, :recipient_id)
     end
 end
