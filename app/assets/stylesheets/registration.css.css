@@ -1,0 +1,35 @@
+#user_country {
+  width: 100%;
+}
+
+.user_gender .radio {
+  padding-right: 25px;
+}
+
+.next-button, .back-button {
+  font-family: "PT Sans";
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  border-radius: 7px;
+  border-width: 0;
+}
+
+.next-button {
+  background-color: #4cdea9;
+}
+
+.next-button:hover {
+  background-color: #2aab7c;
+  color: #ffffff;
+}
+
+.back-button {
+  background-color: #e9e9e9;
+}
+
+.back-button:hover {
+  background-color: #d3d1d1;
+  color: #ffffff;
+}
