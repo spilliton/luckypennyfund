@@ -7,4 +7,6 @@ class Recipient < ActiveRecord::Base
 
   belongs_to :creator, class_name: "User"
 
+  scope :oldest, lambda{ order(created_at: :asc) }
+
 end
