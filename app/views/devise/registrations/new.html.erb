@@ -11,12 +11,14 @@
     <a class="pt-sans" href="/users/sign_in">sign in</a>
   </p>
 
-	<h4 class="text-blue sign-up caption text-center">thank you for choosing to adopt, let's get started. <br><span class="caption small">We need to create and account for you.</span></h4>
+	<h4 class="text-blue sign-up caption text-center">thank you for choosing to adopt, let's get started. <br><span class="caption small cta">We need to create and account for you.</span></h4>
 
 	<div class="ruler"></div>
 	<div class="clearfix"></div>
 	
 </div>
+
+<hr>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
@@ -53,7 +55,7 @@
         <div class="col-sm-1"></div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group step-bar">
         <div class="col-sm-5"></div>
         <div class="col-sm-2 step nopadding">STEP 1 OF 3</div>
         <div class="col-sm-2"></div>
@@ -75,7 +77,7 @@
         </div>
         <div class="col-sm-2"></div>
         <div class="col-sm-4 nopadding">
-          <%= f.label "Date of Birth" %>
+          <label class="string optional control-label">Date of Birth</label>
           <div class="form-inline">
             <%= f.input :dob, label: "", as: :date, required: true, start_year: 1900, order: [:day, :month, :year] %>
           </div>
@@ -85,15 +87,19 @@
       </div>
       <div class="form-group">
         <div class="col-sm-1"></div>
+        <label class="string control-label" id="address-label">Personal Address</label>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <%= f.input :address1, label: "Address 1", required: true %>
+            <%= f.input :address1, label: "Address Line 1", required: true %>
           </div>
         <div class="col-sm-1"></div>
       </div>
       <div class="form-group">
         <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <%= f.input :address2, label: "Address 2", required: false %>
+            <%= f.input :address2, label: "Address Line 2", required: false %>
           </div>
         <div class="col-sm-1"></div>        
       </div>
@@ -117,7 +123,7 @@
         <div class="col-sm-1"></div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group step-bar">
         <div class="col-sm-1"></div>
         <div class="col-sm-2 nopadding">
           <div class="back-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Back</div>
@@ -142,12 +148,12 @@
         <div class="col-sm-1"></div>
       </div>
 
-      <div class="form-roup">
+      <div class="form-roup step-bar">
         <div class="col-sm-1"></div>
         <div class="col-sm-2 nopadding">
           <div class="back-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Back</div>
         </div>
-        
+
         <div class="col-sm-2"></div>
         <div class="col-sm-2 step nopadding">STEP 3 OF 3</div>
         <div class="col-sm-2"></div>

@@ -7,6 +7,23 @@ body, label, div {
    margin: 0 !important;
 }
 
+.cta {
+  font-family: "PT Sans";
+  font-weight: 400;
+}
+
+hr {
+  width: 550px;
+}
+
+#address-label {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b8b8b8;
+  letter-spacing: .1em;
+  size: 14px;
+}
+
 #user_country {
   width: 100%;
 }
@@ -20,6 +37,10 @@ body, label, div {
   font-size: 14px;
   font-weight: bold;
   color: #b0adad;
+}
+
+.step-bar {
+  padding-top: 18px;
 }
 
 .next-button, .back-button, input.btn{
@@ -141,4 +162,8 @@ abbr[title="required"] {
 .user_gender.form-group, .user_dob.form-group {
   margin-left: 0;
   margin-right: 0;
+}
+
+#matching-background {
+  color: #4cdea9;
 }

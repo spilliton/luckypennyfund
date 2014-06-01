@@ -65,6 +65,8 @@ Rails.application.routes.draw do
   #   end
 
   get "/profile" => "homepage#profile"
+  get "/matching" => "matching#matching"
+  get "/match" => "matching#recipient_match"
 
   root to: 'homepage#index'
 

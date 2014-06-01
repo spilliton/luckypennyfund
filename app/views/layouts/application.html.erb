@@ -12,7 +12,9 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/navbar' %>
+<% unless @hide_nav_bar %>
+  <%= render partial: 'layouts/navbar' %>
+<% end %>
 
 <% unless notice.blank? %><div class="alert alert-success"><%= notice %></div><% end %>
 <% unless alert.blank? %><div class="alert alert-warning"><%= alert %></div><% end %>

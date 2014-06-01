@@ -1,0 +1,44 @@
+<html>
+<head>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #4cdea9;
+  }
+
+  #match-congratulations {
+  color: #ffffff;
+}
+
+#match-congratulations, #match-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#match-loader {
+  text-align: center;
+}
+
+  </style>
+
+  <script type="text/javascript">
+  function delayedRedirect(){
+    window.location = "/match"
+  }
+  </script>
+</head>
+<body onLoad="setTimeout('delayedRedirect()', 3000)">
+  <br>
+  <br>
+  <h1 id="match-congratulations">Congratulations!</h1>
+  <br>
+  <h3 id="match-text">Please wait while we match you with a child in need...</h3>
+  <br>
+  <div id="match-loader">
+    <%= image_tag "loader.gif" %>
+  </div>
+</body>
+</html>
+
