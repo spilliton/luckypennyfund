@@ -49,8 +49,10 @@
 
         <div class="form-group">
           <div class="col-sm-7"></div>
-          <div class="col-sm-2">STEP 1 OF 3</div>
-          <div class="col-sm-2 next-button btn btn-default" onclick="$('.login-info').hide(); $('.user-info').show();">Next</div>
+          <div class="col-sm-2 step nopadding">STEP 1 OF 3</div>
+          <div class="col-sm-2 nopadding">
+            <div class="next-button btn btn-default" onclick="$('.login-info').hide(); $('.user-info').show();">Next</div>
+          </div>
           <div class="col-sm-1"></div>
         </div>
       </div>     
@@ -110,19 +112,36 @@
 
         <div class="form-group">
           <div class="col-sm-5"></div>
-          <div class="col-sm-2">STEP 1 OF 3</div>
-          <div class="col-sm-2 back-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Back</div>
-          <div class="col-sm-2 next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
+          <div class="col-sm-2 step nopadding">STEP 2 OF 3</div>
+          <div class="col-sm-2 nopadding">
+            <div class="back-button btn btn-default" onclick="$('.user-info').hide(); $('.login-info').show();">Back</div>
+          </div>
+          <div class="col-sm-2 nopadding">
+            <div class="next-button btn btn-default" onclick="$('.user-info').hide(); $('.payment-info').show();">Next</div>
+          </div>
           <div class="col-sm-1"></div>
         </div>
       </div>
 
       <div class="payment-info" style="display: none">
-        Payment Info
+        <div class="form-group">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            Payment Info
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
 
-        <div class="back-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Back</div>      
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+        <div class="form-roup">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-2 step nopadding">STEP 3 OF 3</div>
+          <div class="col-sm-2 nopadding">
+            <div class="back-button btn btn-default" onclick="$('.payment-info').hide(); $('.user-info').show();">Back</div>
+          </div>
+          <div class="col-sm-2 nopadding form-actions">
+            <%= f.button :submit, "Finish" %>
+          </div>
+          <div class="col-sm-1"></div>
         </div>
 
       </div>
@@ -130,7 +149,6 @@
 
 	<% end %>
 
-	<%= render "devise/shared/links" %>
 </div>
 
 <% content_for :js do %>
