@@ -5,6 +5,12 @@ donor:
   last_name: Bro
   email: somebro@gmail.com
 
+caseworker:
+  first_name: Case
+  last_name: Worker
+  email: caseworker@gmail.com
+  admin: true
+
 superuser:
   first_name: Admin
   last_name: Person
