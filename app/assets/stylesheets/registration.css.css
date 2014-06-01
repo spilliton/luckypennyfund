@@ -1,3 +1,12 @@
+body, label, div {
+  font-family: "PT Sans";
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
 #user_country {
   width: 100%;
 }
@@ -6,7 +15,11 @@
   padding-right: 25px;
 }
 
-.next-button, .back-button {
+.step {
+  text-align: right;
+}
+
+.next-button, .back-button, input.btn{
   font-family: "PT Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -14,13 +27,15 @@
   letter-spacing: 0.1em;
   border-radius: 7px;
   border-width: 0;
+  width: 80%;
+  float: right;
 }
 
-.next-button {
+.next-button, input.btn {
   background-color: #4cdea9;
 }
 
-.next-button:hover {
+.next-button:hover, input.btn:hover {
   background-color: #2aab7c;
   color: #ffffff;
 }
@@ -32,4 +47,29 @@
 .back-button:hover {
   background-color: #d3d1d1;
   color: #ffffff;
+}
+
+.control-label, select {
+  font-weight: 400;
+  color: #989ea0;
+  font-size: 15px;
+}
+
+.form-control, select {
+  border-width: 1px;
+  border-color: #cfcfcf;  
+}
+
+.form-control:hover {
+  border-color: #9b9999;
+}
+
+input.radio_buttons.required {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+select {
+  -webkit-appearance: none;
+  height: 34px;
 }
