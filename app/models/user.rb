@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
   has_many :recipients, class_name: "Recipient", foreign_key: "creator_id"
 
+  has_and_belongs_to_many :families, class_name: "Recipient", join_table: 'recipients_users', foreign_key: :user_id, association_foreign_key: :recipient_id
+
 end
