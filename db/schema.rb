@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20140601011639) do
     t.string   "zip"
     t.string   "country"
     t.string   "gender"
+    t.date     "dob"
     t.boolean  "admin",                  default: false
     t.boolean  "superuser",              default: false
-    t.date     "dob"
     t.string   "last_name"
   end
 
