@@ -9,7 +9,19 @@ inputs = %w[
   StringInput
   TextInput
 ]
+
+# Replaced the below to make this compatible with ActiveAdmin for Rails 4.1
+# See https://github.com/gregbell/active_admin/issues/2703
+inputs.each do |input_type|
+  "SimpleForm::Inputs::#{input_type}".constantize.class_eval do
+    alias_method :__input_html_classes, :input_html_classes
+    define_method(:input_html_classes) do
+      __input_html_classes.push('form-control')
+    end
+  end
+end
  
+=begin
 inputs.each do |input_type|
   superclass = "SimpleForm::Inputs::#{input_type}".constantize
  
@@ -21,6 +33,7 @@ inputs.each do |input_type|
  
   Object.const_set(input_type, new_class)
 end
+=end
  
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|

@@ -80,7 +80,7 @@ class UsersController < ApplicationController
         :organization, 
         :address1, 
         :address2,
-        :city,
+        :locality,
         :state,
         :zip,
         :country,

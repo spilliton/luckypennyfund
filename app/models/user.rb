@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :recipients, class_name: "Recipient", foreign_key: "creator_id"
 
+  def name
+    return self.email
+  end
+
 end

@@ -17,4 +17,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :address1, :address2, :locality, :state, :zip, :country, :gender, :dob) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :address1, :address2, :locality, :state, :zip, :country, :gender, :dob) }
   end
+
+  def authenticate_admin_user!
+    raise SecurityError unless current_user.try(:superuser?)
+  end
+
+  rescue_from SecurityError do |exception|
+    Rails.logger.info "Does not authenticate_admin!"
+    redirect_to "/"
+  end
 end

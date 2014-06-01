@@ -57,3 +57,4 @@ group :test do
 end
 
 gem 'country_select', '~> 1.3.1'
+gem 'activeadmin', github: 'gregbell/active_admin'
