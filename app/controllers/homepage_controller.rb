@@ -8,4 +8,8 @@ class HomepageController < ApplicationController
     end
   end
 
+  def profile
+    render layout: false
+  end
+
 end
