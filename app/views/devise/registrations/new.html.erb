@@ -82,7 +82,7 @@
         <div class="form-group">
           <div class="col-sm-1"></div>
           <div class="col-sm-2">
-            <%= f.input :locality, required: true %>
+            <%= f.input :locality, required: true, label: 'City' %>
           </div>
           <div class="col-sm-1"></div>
           <div class="col-sm-2">
@@ -125,9 +125,7 @@
 <% content_for :js do %>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.carousel').carousel({
-			wrap: false
-		});
+		$('#user_country').val('United States of America');
 	});
 </script>
 

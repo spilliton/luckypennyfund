@@ -21,7 +21,7 @@
       </ul>
       </div>
       <div class="col-md-2">
-        <% if !current_page?('/users/sign_up') && !user_signed_in? %>           
+        <% if !user_signed_in? %>           
           <a href="/users/sign_up" class="adopt-now btn-danger btn btn-sm">Adopt now</a>
         <% end %>
         <% if user_signed_in? %>
